@@ -1,0 +1,60 @@
+{
+  "mcpFakes": [
+    {
+      "scope": "shared",
+      "mount": "/mcp/hyperagent",
+      "undeclaredTools": "allow",
+      "tools": [
+        {
+          "name": "list_agents",
+          "calls": [
+            {
+              "anyArgs": true,
+              "result": "[{\"id\":\"mock-agent-1\",\"name\":\"Mock HyperAgent\"}]"
+            }
+          ]
+        },
+        {
+          "name": "list_threads",
+          "calls": [
+            {
+              "anyArgs": true,
+              "result": "[{\"id\":\"mock-thread-1\",\"title\":\"Offline test thread\"}]"
+            }
+          ]
+        },
+        {
+          "name": "get_thread",
+          "calls": [
+            {
+              "anyArgs": true,
+              "result": "{\"id\":\"mock-thread-1\",\"messages\":[{\"role\":\"agent\",\"text\":\"hello from aimock\"}]}"
+            }
+          ]
+        },
+        { "name": "list_pending_approvals", "calls": [{ "anyArgs": true, "result": "[]" }] },
+        {
+          "name": "create_thread",
+          "calls": [{ "anyArgs": true, "result": "{\"id\":\"mock-thread-new\",\"mock\":true}" }]
+        },
+        {
+          "name": "send_message",
+          "calls": [{ "anyArgs": true, "result": "{\"ok\":true,\"mock\":true}" }]
+        },
+        {
+          "name": "resolve_approval",
+          "calls": [{ "anyArgs": true, "result": "{\"ok\":true,\"mock\":true}" }]
+        },
+        {
+          "name": "create_attachment_upload",
+          "calls": [
+            {
+              "anyArgs": true,
+              "result": "{\"uploadUrl\":\"http://127.0.0.1:4010/mock-upload\",\"mock\":true}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
